@@ -42,7 +42,7 @@ class _BlogOverviewState extends State<BlogOverview> {
             ),
           ),
         ),
-        backgroundColor: Colors.blue[300],
+        backgroundColor: Colors.blue[400],
         body: _screen[_currentPage],
       bottomNavigationBar: FancyBottomNavigation(
         initialSelection: _currentPage,

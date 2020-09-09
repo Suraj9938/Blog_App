@@ -1,4 +1,5 @@
 import 'package:blog_application/screens/blog_overview_screen.dart';
+import 'package:blog_application/screens/user_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Blog',
       debugShowCheckedModeBanner: false,
       home: BlogOverview(),
+      routes: {
+        UserDetailScreen.routeName: (ctx) => UserDetailScreen(),
+      },
     );
   }
 }

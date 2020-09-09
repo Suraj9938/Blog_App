@@ -12,7 +12,7 @@ class BlogScreen extends StatelessWidget {
         children: <Widget>[
           BlogCarousel(),
           Padding(
-            padding: EdgeInsets.only(top: 40, left: 20, bottom: 5),
+            padding: EdgeInsets.only(top: 28, left: 20, bottom: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -21,7 +21,7 @@ class BlogScreen extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontFamily: "font2",
-                    fontSize: 24,
+                    fontSize: 28,
                     color: Colors.white,
                   ),
                 ),
