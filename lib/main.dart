@@ -1,5 +1,6 @@
 import 'package:blog_application/provider/user_provider.dart';
 import 'package:blog_application/screens/blog_overview_screen.dart';
+import 'package:blog_application/screens/comments_screen.dart';
 import 'package:blog_application/screens/user_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         home: BlogOverview(),
         routes: {
           UserDetailScreen.routeName: (ctx) => UserDetailScreen(),
+          CommentsScreen.routeName: (ctx) => CommentsScreen(),
         },
       ),
     );

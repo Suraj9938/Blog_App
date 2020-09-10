@@ -101,7 +101,9 @@ class UserListView extends StatelessWidget {
           );
         } else if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              backgroundColor: Colors.white,
+            ),
           );
         } else {
           return Text(snapshot.error.toString());

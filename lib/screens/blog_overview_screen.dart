@@ -1,7 +1,7 @@
 import 'package:blog_application/provider/user_provider.dart';
 import 'package:blog_application/screens/album_screen.dart';
 import 'package:blog_application/screens/blog_screen.dart';
-import 'package:blog_application/screens/post_comments_screen.dart';
+import 'package:blog_application/screens/post_screen.dart';
 import 'package:blog_application/screens/todo_screen.dart';
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
@@ -53,7 +53,7 @@ class _BlogOverviewState extends State<BlogOverview> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            _currentPage == 0 ? "Blog OverView" : _currentPage == 1 ? "Posts and Comments" : _currentPage == 2 ? "Album" : "To-Do",
+            _currentPage == 0 ? "Blog OverView" : _currentPage == 1 ? "Posts" : _currentPage == 2 ? "Album" : "To-Do",
             style: TextStyle(
               fontFamily: "font2",
               fontSize: 28,
