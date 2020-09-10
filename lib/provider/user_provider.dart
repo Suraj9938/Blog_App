@@ -16,7 +16,9 @@ class Users with ChangeNotifier{
     if(response.statusCode == 200) {
       List userJson = json.decode(response.body);
       user = userJson.map((e) => User.fromJson(e)).toList();
-      return user;
     }
+    print("List value: ");
+    print(user);
+    return user;
   }
 }

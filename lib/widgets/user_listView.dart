@@ -9,7 +9,7 @@ import 'package:shimmer/shimmer.dart';
 class UserListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var fetch = Provider.of<Users>(context);
+    final fetch = Provider.of<Users>(context);
 
     return FutureBuilder(
       future: fetch.fetchUser(),
