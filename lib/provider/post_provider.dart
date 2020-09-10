@@ -1,9 +1,10 @@
 import 'dart:convert';
 
 import 'package:blog_application/model/post.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as https;
 
-class Posts {
+class Posts with ChangeNotifier{
 
   List<Post> _posts = List<Post>();
 

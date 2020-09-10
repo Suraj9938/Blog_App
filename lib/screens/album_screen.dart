@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AlbumCommentScreen extends StatelessWidget {
+class AlbumScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

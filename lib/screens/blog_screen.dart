@@ -29,7 +29,7 @@ class BlogScreen extends StatelessWidget {
             ),
           ),
           Container(
-            height: 190,
+            height: 200,
             width: double.infinity,
             child: UserListView(),
           ),
