@@ -1,10 +1,8 @@
-import 'package:blog_application/model/user.dart';
 import 'package:blog_application/provider/user_provider.dart';
 import 'package:blog_application/screens/user_detail_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shimmer/shimmer.dart';
 
 class UserListView extends StatelessWidget {
   @override
