@@ -6,7 +6,11 @@ import 'package:provider/provider.dart';
 class UserDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<User>(context, listen: false);
+    // final id = ModalRoute.of(context).settings.arguments as String;
+    // final selectedUser = Provider.of<Users>(context, listen: false).findById(id);
+    //
+    // print("Name :");
+    // print(selectedUser.name);
 
     return SingleChildScrollView(
       child: Container(

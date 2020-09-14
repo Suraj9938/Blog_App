@@ -1,4 +1,6 @@
+import 'package:blog_application/model/post.dart';
 import 'package:blog_application/model/user.dart';
+import 'package:blog_application/provider/post_provider.dart';
 import 'package:blog_application/provider/user_provider.dart';
 import 'package:blog_application/screens/album_screen.dart';
 import 'package:blog_application/screens/blog_overview_screen.dart';
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => User()),
         ChangeNotifierProvider(create: (_) => Users()),
+        ChangeNotifierProvider(create: (_) => Posts()),
+        ChangeNotifierProvider(create: (_) => Post()),
       ],
       child: MaterialApp(
         title: 'Blog',

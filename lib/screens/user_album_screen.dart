@@ -33,7 +33,7 @@ class UserAlbumScreen extends StatelessWidget {
                             fit: BoxFit.fill,
                           ),
                           title: Text(
-                            "Suraj Lal Shrestha",
+                            fetch.users[index].name,
                             style: TextStyle(
                               fontFamily: "font2",
                               color: Colors.black,
@@ -55,7 +55,7 @@ class UserAlbumScreen extends StatelessWidget {
                   ),
                 );
               },
-              itemCount: 8,
+              itemCount: fetch.users.length,
             ),
           );
         }

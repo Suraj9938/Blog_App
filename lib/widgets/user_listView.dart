@@ -1,3 +1,4 @@
+import 'package:blog_application/model/user.dart';
 import 'package:blog_application/provider/user_provider.dart';
 import 'package:blog_application/screens/user_detail_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,6 +9,7 @@ class UserListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fetch = Provider.of<Users>(context, listen: false);
+    final loadedUser = Provider.of<User>(context, listen: false);
 
     return FutureBuilder(
       future: fetch.fetchUser(),
@@ -22,7 +24,7 @@ class UserListView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(38),
                 child: InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, UserDetailScreen.routeName);
+                    Navigator.pushNamed(context, UserDetailScreen.routeName, /*arguments: loadedUser.id*/);
                   },
                   child: Card(
                     color: Colors.orange[200],

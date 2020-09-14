@@ -1,3 +1,4 @@
+import 'package:blog_application/provider/post_provider.dart';
 import 'package:blog_application/provider/user_provider.dart';
 import 'package:blog_application/screens/post_screen.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ class UserPostScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fetch = Provider.of<Users>(context, listen: false);
+    final posts = Provider.of<Posts>(context, listen: false);
 
     return FutureBuilder(
       future: fetch.fetchUser(),
@@ -33,7 +35,7 @@ class UserPostScreen extends StatelessWidget {
                             fit: BoxFit.fill,
                           ),
                           title: Text(
-                            "Suraj Lal Shrestha",
+                            fetch.users[index].name,
                             style: TextStyle(
                               fontFamily: "font2",
                               color: Colors.black,
@@ -55,7 +57,7 @@ class UserPostScreen extends StatelessWidget {
                   ),
                 );
               },
-              itemCount: 8,
+              itemCount: fetch.users.length,
             ),
           );
         }

@@ -11,6 +11,10 @@ class Users with ChangeNotifier {
     return [..._users];
   }
 
+  User findById(String id) {
+    return _users.firstWhere((user) => user.id == id);
+  }
+
   Future<List<User>> fetchUser() async {
     List<User> newUser = [];
 
