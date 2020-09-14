@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PostScreen extends StatefulWidget {
-
   static const routeName = "/post_screen";
 
   @override
@@ -11,12 +10,13 @@ class PostScreen extends StatefulWidget {
 }
 
 class _PostScreenState extends State<PostScreen> {
-
-
   @override
   Widget build(BuildContext context) {
-    return widget(
-      child: ListView.builder(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Posts"),
+      ),
+      body: ListView.builder(
         itemBuilder: (ctx, index) {
           return PostDetail();
         },

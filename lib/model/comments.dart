@@ -1,4 +1,6 @@
-class Comments {
+import 'package:flutter/cupertino.dart';
+
+class Comment with ChangeNotifier {
   int postId;
   int id;
   String name;
@@ -6,13 +8,5 @@ class Comments {
   String body;
 
   // Constructor of Comments Class
-  Comments({this.postId, this.id, this.name, this.email, this.body});
-
-  Comments.fromJson(Map<String, dynamic> json) {
-    postId = json['postId'];
-    id = json['id'];
-    name = json['name'];
-    email = json['email'];
-    body = json['body'];
-  }
+  Comment({this.postId, this.id, this.name, this.email, this.body});
 }

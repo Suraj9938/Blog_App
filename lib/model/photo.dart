@@ -1,4 +1,6 @@
-class Photo {
+import 'package:flutter/cupertino.dart';
+
+class Photo with ChangeNotifier{
   int albumId;
   int id;
   String title;
@@ -7,12 +9,4 @@ class Photo {
 
   // Constructor of Photo Class
   Photo({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
-
-  Photo.fromJson(Map<String, dynamic> json) {
-    albumId = json['albumId'];
-    id = json['id'];
-    title = json['title'];
-    url = json['url'];
-    thumbnailUrl = json['thumbnailUrl'];
-  }
 }

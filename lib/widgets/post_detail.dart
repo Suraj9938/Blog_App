@@ -13,9 +13,9 @@ class _PostDetailState extends State<PostDetail> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(bottom: 15, left: 6, right: 6, top: 12),
+      padding: EdgeInsets.only(left: 6, right: 6, top: 10, bottom: 3),
       width: double.infinity - 20,
-      height: _isComment ? 370 : 300,
+      height: _isComment ? 350 : 300,
       color: Colors.blue[400],
       child: Card(
         child: Padding(
