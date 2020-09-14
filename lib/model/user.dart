@@ -34,8 +34,8 @@ class Address {
 }
 
 class Geo {
-  double lat;
-  double lng;
+  String lat;
+  String lng;
 
   // Constructor of Geo
   Geo({this.lat, this.lng});

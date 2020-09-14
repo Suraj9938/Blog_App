@@ -8,7 +8,6 @@ class UserPostScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fetch = Provider.of<Users>(context, listen: false);
-    final posts = Provider.of<Posts>(context, listen: false);
 
     return FutureBuilder(
       future: fetch.fetchUser(),
@@ -20,7 +19,7 @@ class UserPostScreen extends StatelessWidget {
               itemBuilder: (ctx, index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, PostScreen.routeName);
+                    Navigator.pushNamed(context, PostScreen.routeName, arguments: fetch.users[index].id);
                   },
                   child: Container(
                     margin: EdgeInsets.only(top: 7, left: 10, right: 10, bottom: 4),
@@ -44,7 +43,7 @@ class UserPostScreen extends StatelessWidget {
                             ),
                           ),
                           subtitle: Text(
-                            "5 posts",
+                            "Click to see posts",
                             style: TextStyle(
                               fontFamily: "font1",
                               color: Colors.black,

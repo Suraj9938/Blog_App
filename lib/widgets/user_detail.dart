@@ -6,11 +6,12 @@ import 'package:provider/provider.dart';
 class UserDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // final id = ModalRoute.of(context).settings.arguments as String;
-    // final selectedUser = Provider.of<Users>(context, listen: false).findById(id);
-    //
-    // print("Name :");
-    // print(selectedUser.name);
+    final users = Provider.of<Users>(context, listen: false).users;
+    final userId = ModalRoute.of(context).settings.arguments as int;
+    final user = users.singleWhere((usr) => usr.id == userId);
+
+    // print("Users :");
+    // print(user.name);
 
     return SingleChildScrollView(
       child: Container(
@@ -22,7 +23,8 @@ class UserDetail extends StatelessWidget {
               height: 10,
             ),
             Text(
-              "Suraj Shrestha",
+              user.name,
+              //user.name.toString(),
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -48,7 +50,7 @@ class UserDetail extends StatelessWidget {
                       ),
                       color: Colors.orange[400],
                       child: Text(
-                        "Bret",
+                        user.username,
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -72,7 +74,7 @@ class UserDetail extends StatelessWidget {
                       ),
                       color: Colors.orange[400],
                       child: Text(
-                        "Sincere@april.biz",
+                        user.email,
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -125,7 +127,7 @@ class UserDetail extends StatelessWidget {
                           width: 15,
                         ),
                         Text(
-                          "Kulas Light",
+                          user.address.street,
                           style: TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.bold,
@@ -153,7 +155,7 @@ class UserDetail extends StatelessWidget {
                           width: 15,
                         ),
                         Text(
-                          "Apt. 556",
+                          user.address.suite,
                           style: TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.bold,
@@ -181,7 +183,7 @@ class UserDetail extends StatelessWidget {
                           width: 15,
                         ),
                         Text(
-                          "Gwenborough",
+                          user.address.city,
                           style: TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.bold,
@@ -209,7 +211,7 @@ class UserDetail extends StatelessWidget {
                           width: 15,
                         ),
                         Text(
-                          "Kulas Light",
+                          user.address.zipcode,
                           style: TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.bold,
@@ -259,7 +261,7 @@ class UserDetail extends StatelessWidget {
                                   width: 15,
                                 ),
                                 Text(
-                                  "-37.3159",
+                                  user.address.geo.lat,
                                   style: TextStyle(
                                     color: Colors.red,
                                     fontWeight: FontWeight.bold,
@@ -287,7 +289,7 @@ class UserDetail extends StatelessWidget {
                                   width: 15,
                                 ),
                                 Text(
-                                  "81.1496",
+                                  user.address.geo.lng,
                                   style: TextStyle(
                                     color: Colors.red,
                                     fontWeight: FontWeight.bold,
@@ -319,7 +321,7 @@ class UserDetail extends StatelessWidget {
                           width: 15,
                         ),
                         Text(
-                          "1-770-736-8031 x56442",
+                          user.phone,
                           style: TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.bold,
@@ -347,7 +349,7 @@ class UserDetail extends StatelessWidget {
                           width: 15,
                         ),
                         Text(
-                          "hildegard.org",
+                          user.website,
                           style: TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.bold,
@@ -389,7 +391,7 @@ class UserDetail extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          "Name   => ",
+                          "Name => ",
                           style: TextStyle(
                             color: Colors.brown,
                             fontWeight: FontWeight.bold,
@@ -401,7 +403,7 @@ class UserDetail extends StatelessWidget {
                           width: 15,
                         ),
                         Text(
-                          "Romaguera-Crona",
+                          user.company.name,
                           style: TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.bold,
@@ -421,7 +423,7 @@ class UserDetail extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.brown,
                             fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                            fontSize: 17,
                             fontFamily: "font1",
                           ),
                         ),
@@ -429,11 +431,11 @@ class UserDetail extends StatelessWidget {
                           width: 15,
                         ),
                         Text(
-                          "Apt. 556",
+                          user.company.bs,
                           style: TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                            fontSize: 17,
                             fontFamily: "font1",
                           ),
                         ),
@@ -472,7 +474,7 @@ class UserDetail extends StatelessWidget {
                                 width: 250,
                                 color: Colors.amberAccent,
                                 child: Text(
-                                  "Multi-layered client-server neural-net",
+                                  user.company.catchPhrase,
                                   style: TextStyle(
                                     color: Colors.green,
                                     fontWeight: FontWeight.bold,

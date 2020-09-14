@@ -1,8 +1,17 @@
+import 'package:blog_application/model/comments.dart';
+import 'package:blog_application/provider/comment_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CommentsDetail extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    final comment = Provider.of<Comment>(context, listen: false);
+    final postId = ModalRoute.of(context).settings.arguments as int;
+    final posts = Provider.of<Comments>(context, listen: false).comments;
+    final post = posts.singleWhere((pst) => pst.id == postId);
+
     return Container(
       padding: EdgeInsets.only(
         left: 4,
@@ -21,7 +30,7 @@ class CommentsDetail extends StatelessWidget {
                   "assets/images/image1.png",
                 ),
                 title: Text(
-                  "id labore ex et quam laborum",
+                  comment.name,
                   style: TextStyle(
                     fontFamily: "font1",
                     fontSize: 19,
@@ -29,7 +38,7 @@ class CommentsDetail extends StatelessWidget {
                   ),
                 ),
                 subtitle: Text(
-                  "Eliseo@gardner.biz",
+                  comment.email,
                   style: TextStyle(
                     fontFamily: "font1",
                     fontSize: 17,
@@ -45,7 +54,7 @@ class CommentsDetail extends StatelessWidget {
                 right: 10,
               ),
               child: Text(
-                "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium",
+                comment.body,
                 style: TextStyle(
                   fontFamily: "font1",
                   fontSize: 17,

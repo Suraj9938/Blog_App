@@ -1,5 +1,8 @@
+import 'package:blog_application/model/post.dart';
+import 'package:blog_application/provider/user_provider.dart';
 import 'package:blog_application/screens/comments_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class PostDetail extends StatefulWidget {
 
@@ -12,10 +15,15 @@ class _PostDetailState extends State<PostDetail> {
 
   @override
   Widget build(BuildContext context) {
+    final post = Provider.of<Post>(context, listen: false);
+    final userId = ModalRoute.of(context).settings.arguments as int;
+    final users = Provider.of<Users>(context, listen: false).users;
+    final user = users.singleWhere((usr) => usr.id == userId);
+
     return Container(
       padding: EdgeInsets.only(left: 6, right: 6, top: 10, bottom: 3),
       width: double.infinity - 20,
-      height: _isComment ? 350 : 285,
+      height: _isComment ? 395 : 350,
       color: Colors.blue[400],
       child: Card(
         child: Padding(
@@ -32,7 +40,7 @@ class _PostDetailState extends State<PostDetail> {
                   width: 60,
                 ),
                 title: Text(
-                  "Suraj Lal Shrestha",
+                  user.name,
                   style: TextStyle(
                     fontFamily: "font1",
                     fontSize: 22,
@@ -76,10 +84,10 @@ class _PostDetailState extends State<PostDetail> {
                       width: 240,
                       height: 80,
                       child: Text(
-                        "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+                        post.title,
                         style: TextStyle(
                           fontFamily: "font1",
-                          fontSize: 17,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                         textAlign: TextAlign.start,
@@ -89,18 +97,17 @@ class _PostDetailState extends State<PostDetail> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(
-                  left: 20,
-                  right: 15,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20,
                 ),
                 child: Text(
-                  "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto",
+                  post.body,
                   style: TextStyle(
                     fontFamily: "font2",
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
-                  textAlign: TextAlign.start,
+                  textAlign: TextAlign.justify,
                 ),
               ),
               if (_isComment)

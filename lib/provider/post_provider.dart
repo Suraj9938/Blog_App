@@ -30,6 +30,7 @@ class Posts with ChangeNotifier {
       ));
     }
     _posts = newPost;
+
     notifyListeners();
 
     return _posts;

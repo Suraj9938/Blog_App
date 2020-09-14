@@ -18,7 +18,7 @@ class UserAlbumScreen extends StatelessWidget {
               itemBuilder: (ctx, index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, AlbumScreen.routeName);
+                    Navigator.pushNamed(context, AlbumScreen.routeName, arguments: fetch.users[index].id);
                   },
                   child: Container(
                     margin: EdgeInsets.only(top: 7, left: 10, right: 10, bottom: 4),
@@ -42,7 +42,7 @@ class UserAlbumScreen extends StatelessWidget {
                             ),
                           ),
                           subtitle: Text(
-                            "15 Albums",
+                            "Click to see albums",
                             style: TextStyle(
                               fontFamily: "font1",
                               color: Colors.black,

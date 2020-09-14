@@ -33,7 +33,7 @@ class Users with ChangeNotifier {
       var comp = userJson[i]['company'] as Map<String, dynamic>;
       var address = userJson[i]['address'] as Map<String, dynamic>;
       Company newCompany = Company(name: comp['name'], bs: comp['bs'], catchPhrase: comp['catchPhrase'],);
-      Address addressLocation = Address(street: address['street'], suite: address['suite'], city: address['city'], zipcode: address['zipcode'], geo: Geo(lat: double.parse(address['geo']['lat']), lng: double.parse(address['geo']['lng'])));
+      Address addressLocation = Address(street: address['street'], suite: address['suite'], city: address['city'], zipcode: address['zipcode'], geo: Geo(lat: address['geo']['lat'], lng: address['geo']['lng']));
       // print(addressLocation.geo.lng);
       newUser.add(User(
         id: userJson[i]['id'],

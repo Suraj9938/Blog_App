@@ -1,5 +1,9 @@
+import 'package:blog_application/model/album.dart';
+import 'package:blog_application/model/comments.dart';
 import 'package:blog_application/model/post.dart';
 import 'package:blog_application/model/user.dart';
+import 'package:blog_application/provider/album_provider.dart';
+import 'package:blog_application/provider/comment_provider.dart';
 import 'package:blog_application/provider/post_provider.dart';
 import 'package:blog_application/provider/user_provider.dart';
 import 'package:blog_application/screens/album_screen.dart';
@@ -26,6 +30,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => Users()),
         ChangeNotifierProvider(create: (_) => Posts()),
         ChangeNotifierProvider(create: (_) => Post()),
+        ChangeNotifierProvider(create: (_) => Albums()),
+        ChangeNotifierProvider(create: (_) => Album()),
+        ChangeNotifierProvider(create: (_) => Comments()),
+        ChangeNotifierProvider(create: (_) => Comment()),
       ],
       child: MaterialApp(
         title: 'Blog',
