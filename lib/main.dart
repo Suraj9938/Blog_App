@@ -1,5 +1,6 @@
 import 'package:blog_application/model/user.dart';
 import 'package:blog_application/provider/user_provider.dart';
+import 'package:blog_application/screens/album_screen.dart';
 import 'package:blog_application/screens/blog_overview_screen.dart';
 import 'package:blog_application/screens/comments_screen.dart';
 import 'package:blog_application/screens/photo_screen.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
           PhotoScreen.routeName: (ctx) => PhotoScreen(),
           PhotoDetail.routeName: (ctx) => PhotoDetail(),
           PostScreen.routeName: (ctx) => PostScreen(),
+          AlbumScreen.routeName: (ctx) => AlbumScreen(),
         },
       ),
     );

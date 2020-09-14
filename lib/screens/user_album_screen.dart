@@ -1,9 +1,9 @@
 import 'package:blog_application/provider/user_provider.dart';
-import 'package:blog_application/screens/post_screen.dart';
+import 'package:blog_application/screens/album_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class UserPostScreen extends StatelessWidget {
+class UserAlbumScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fetch = Provider.of<Users>(context, listen: false);
@@ -18,7 +18,7 @@ class UserPostScreen extends StatelessWidget {
               itemBuilder: (ctx, index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, PostScreen.routeName);
+                    Navigator.pushNamed(context, AlbumScreen.routeName);
                   },
                   child: Container(
                     margin: EdgeInsets.only(top: 7, left: 10, right: 10, bottom: 4),
@@ -42,7 +42,7 @@ class UserPostScreen extends StatelessWidget {
                             ),
                           ),
                           subtitle: Text(
-                            "5 posts",
+                            "15 Albums",
                             style: TextStyle(
                               fontFamily: "font1",
                               color: Colors.black,

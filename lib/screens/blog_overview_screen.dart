@@ -1,8 +1,7 @@
 import 'package:blog_application/provider/user_provider.dart';
-import 'package:blog_application/screens/album_screen.dart';
 import 'package:blog_application/screens/blog_screen.dart';
-import 'package:blog_application/screens/post_screen.dart';
 import 'package:blog_application/screens/todo_screen.dart';
+import 'package:blog_application/screens/user_album_screen.dart';
 import 'package:blog_application/screens/user_post_screen.dart';
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
@@ -28,7 +27,7 @@ class _BlogOverviewState extends State<BlogOverview> {
   List<Widget> _screen = [
     BlogScreen(),
     UserPostScreen(),
-    AlbumScreen(),
+    UserAlbumScreen(),
     TodoScreen(),
   ];
 
@@ -55,7 +54,7 @@ class _BlogOverviewState extends State<BlogOverview> {
       resizeToAvoidBottomInset: true,
         appBar: AppBar(
           title: Text(
-            _currentPage == 0 ? "Blog OverView" : _currentPage == 1 ? "User Posts" : _currentPage == 2 ? "Album" : "To-Do",
+            _currentPage == 0 ? "Blog OverView" : _currentPage == 1 ? "User Posts" : _currentPage == 2 ? "User Albums" : "To-Do",
             style: TextStyle(
               fontFamily: "font2",
               fontSize: 28,
