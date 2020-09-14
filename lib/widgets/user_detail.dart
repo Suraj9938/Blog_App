@@ -1,8 +1,13 @@
+import 'package:blog_application/model/user.dart';
+import 'package:blog_application/provider/user_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class UserDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<User>(context, listen: false);
+
     return SingleChildScrollView(
       child: Container(
         padding: EdgeInsets.only(left: 18, top: 15),
@@ -13,7 +18,7 @@ class UserDetail extends StatelessWidget {
               height: 10,
             ),
             Text(
-              "Leanne Graham",
+              "Suraj Shrestha",
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

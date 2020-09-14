@@ -1,5 +1,6 @@
 import 'package:blog_application/widgets/user_detail.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class UserDetailScreen extends StatefulWidget {
   static const routeName = "/user_detail";
@@ -57,7 +58,6 @@ Widget _draggableScrollableSheet() {
 }
 
 class _UserDetailScreenState extends State<UserDetailScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -33,6 +33,7 @@ dependencies:
   path_provider: ^1.6.14
   provider: ^4.3.2+2
   url_launcher: ^3.0.3
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:

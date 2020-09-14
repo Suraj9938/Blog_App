@@ -3,6 +3,7 @@ import 'package:blog_application/screens/album_screen.dart';
 import 'package:blog_application/screens/blog_screen.dart';
 import 'package:blog_application/screens/post_screen.dart';
 import 'package:blog_application/screens/todo_screen.dart';
+import 'package:blog_application/screens/user_post_screen.dart';
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class _BlogOverviewState extends State<BlogOverview> {
 
   List<Widget> _screen = [
     BlogScreen(),
-    PostScreen(),
+    UserPostScreen(),
     AlbumScreen(),
     TodoScreen(),
   ];
@@ -51,9 +52,10 @@ class _BlogOverviewState extends State<BlogOverview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
         appBar: AppBar(
           title: Text(
-            _currentPage == 0 ? "Blog OverView" : _currentPage == 1 ? "Posts" : _currentPage == 2 ? "Album" : "To-Do",
+            _currentPage == 0 ? "Blog OverView" : _currentPage == 1 ? "User Posts" : _currentPage == 2 ? "Album" : "To-Do",
             style: TextStyle(
               fontFamily: "font2",
               fontSize: 28,
@@ -68,8 +70,8 @@ class _BlogOverviewState extends State<BlogOverview> {
         onTabChangedListener: onTap,
         tabs: [
           TabData(iconData: Icons.home, title: "Home"),
-          TabData(iconData: Icons.message, title: "Posts and Comments"),
-          TabData(iconData: Icons.question_answer, title: "Album"),
+          TabData(iconData: Icons.question_answer, title: "User Posts"),
+          TabData(iconData: Icons.photo_library, title: "Album"),
           TabData(iconData: Icons.check, title: "To-Do"),
         ],
       ),
